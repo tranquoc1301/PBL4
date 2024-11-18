@@ -1,168 +1,133 @@
-       <!-- Begin Page Content -->
-       <div class="container-fluid">
+<!-- Begin Page Content -->
+<div class="container-fluid">
 
-         <!-- Page Heading -->
-         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-           <h1 class="h3 mb-0 text-gray-800"><?=$title;?></h1>
-         </div>
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">
+            <?=$title;?>
+        </h1>
+    </div>
 
-         <!-- Content Row -->
-         <div class="row">
+    <!-- Overview Row -->
+    <div class="row">
+        <!-- Department Card -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6 class="text-uppercase text-primary font-weight-bold mb-2">Departments</h6>
+                        <h5 class="text-gray-800 font-weight-bold mb-0"><?=$display['c_department'];?> Departments</h5>
+                    </div>
+                    <i class="fas fa-building fa-3x text-gray-300"></i>
+                </div>
+            </div>
+        </div>
 
-           <!-- Earnings (Monthly) Card Example -->
-           <div class="col-xl-3 col-md-6 mb-4">
-             <div class="card border-left-primary shadow h-100 py-2">
-               <div class="card-body">
-                 <div class="row no-gutters align-items-center">
-                   <div class="col mr-2">
-                     <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Departments</div>
-                     <div class="h5 mb-0 font-weight-bold text-gray-800"><?=$display['c_department'];?> Departments</div>
-                   </div>
-                   <div class="col-auto">
-                     <i class="fas fa-building fa-2x text-gray-300"></i>
-                   </div>
-                 </div>
-               </div>
-             </div>
-           </div>
-           <!-- Earnings (Monthly) Card Example -->
-           <div class="col-xl-3 col-md-6 mb-4">
-             <div class="card border-left-info shadow h-100 py-2">
-               <div class="card-body">
-                 <div class="row no-gutters align-items-center">
-                   <div class="col mr-2">
-                     <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Working Shifts</div>
-                     <div class="h5 mb-0 font-weight-bold text-gray-800"><?=$display['c_shift'];?> Shifts</div>
-                   </div>
-                   <div class="col-auto">
-                     <i class="fas fa-exchange-alt fa-2x text-gray-300"></i>
-                   </div>
-                 </div>
-               </div>
-             </div>
-           </div>
+        <!-- Shifts Card -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-info shadow h-100 py-2">
+                <div class="card-body d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6 class="text-uppercase text-info font-weight-bold mb-2">Working Shifts</h6>
+                        <h5 class="text-gray-800 font-weight-bold mb-0"><?=$display['c_shift'];?> Shifts</h5>
+                    </div>
+                    <i class="fas fa-exchange-alt fa-3x text-gray-300"></i>
+                </div>
+            </div>
+        </div>
 
-           <!-- Earnings (Monthly) Card Example -->
-           <div class="col-xl-3 col-md-6 mb-4">
-             <div class="card border-left-success shadow h-100 py-2">
-               <div class="card-body">
-                 <div class="row no-gutters align-items-center">
-                   <div class="col mr-2">
-                     <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Employees</div>
-                     <div class="h5 mb-0 font-weight-bold text-gray-800"><?=$display['c_employee'];?> Employees</div>
-                   </div>
-                   <div class="col-auto">
-                     <i class="fas fa-id-badge fa-2x text-gray-300"></i>
-                   </div>
-                 </div>
-               </div>
-             </div>
-           </div>
+        <!-- Employees Card -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6 class="text-uppercase text-success font-weight-bold mb-2">Employees</h6>
+                        <h5 class="text-gray-800 font-weight-bold mb-0"><?=$display['c_employee'];?> Employees</h5>
+                    </div>
+                    <i class="fas fa-id-badge fa-3x text-gray-300"></i>
+                </div>
+            </div>
+        </div>
 
-           <!-- Pending Requests Card Example -->
-           <div class="col-xl-3 col-md-6 mb-4">
-             <div class="card border-left-danger shadow h-100 py-2">
-               <div class="card-body">
-                 <div class="row no-gutters align-items-center">
-                   <div class="col mr-2">
-                     <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Users</div>
-                     <div class="h5 mb-0 font-weight-bold text-gray-800"><?=$display['c_users'];?> Active Users</div>
-                   </div>
-                   <div class="col-auto">
-                     <i class="fas fa-users fa-2x text-gray-300"></i>
-                   </div>
-                 </div>
-               </div>
-             </div>
-           </div>
-         </div>
+        <!-- Users Card -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-danger shadow h-100 py-2">
+                <div class="card-body d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6 class="text-uppercase text-danger font-weight-bold mb-2">Users</h6>
+                        <h5 class="text-gray-800 font-weight-bold mb-0"><?=$display['c_users'];?> Active Users</h5>
+                    </div>
+                    <i class="fas fa-users fa-3x text-gray-300"></i>
+                </div>
+            </div>
+        </div>
+    </div>
 
-         <!-- Content Row -->
+    <!-- Data Tables Row -->
+    <div class="row">
+        <!-- Departments' Employees Table -->
+        <div class="col-lg-6">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3 d-flex justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">
+                        <i class="fas fa-users"></i> Departments' Employees
+                    </h6>
 
-         <div class="row">
+                </div>
+                <div class="card-body table-responsive" style="max-height: 400px;">
+                    <table class="table table-hover">
+                        <thead class="bg-primary text-white">
+                            <tr>
+                                <th>#</th>
+                                <th>Dept Code</th>
+                                <th>Employees</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php $i = 1; foreach ($d_list as $d): ?>
+                            <tr>
+                                <td><?=$i++?></td>
+                                <td><?=$d['d_id']?></td>
+                                <td><?=$d['qty']?></td>
+                            </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
 
-           <div class="col-xl-4 col-lg-5">
-             <!-- Pie Chart -->
-             <div class="col p-0">
-               <div class="card shadow mb-4">
-                 <!-- Card Header - Dropdown -->
-                 <div class="card-header py-3 d-flex flex-rowz align-items-center justify-content-between">
-                   <h6 class="m-0 font-weight-bold text-primary">Departments' Employees</h6>
-                   <div class="dropdown no-arrow">
-                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                       <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                     </a>
-                     <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                       <div class="dropdown-header">More Details:</div>
-                       <a class="dropdown-item" href="<?=base_url('admin')?>">Department List</a>
-                     </div>
-                   </div>
-                 </div>
-                 <!-- Card Body -->
-                 <div class="card-body" style="max-height: 400px; overflow: scroll; overflow-x : hidden;">
-                   <table class="table">
-                     <thead class="bg-primary text-white">
-                       <tr>
-                         <th scope="col">#</th>
-                         <th scope="col">Dept Code</th>
-                         <th scope="col">Employees</th>
-                       </tr>
-                     </thead>
-                     <tbody>
-                       <?php $i = 1;
-foreach ($d_list as $d): ?>
-                         <tr>
-                           <th scope="row"><?=$i++?></th>
-                           <td><?=$d['d_id']?></td>
-                           <td><?=$d['qty']?></td>
-                         </tr>
-                       <?php endforeach;?>
-                     </tbody>
-                   </table>
-                 </div>
-               </div>
-             </div>
-           </div>
-           <div class="col-xl-4 col-lg-5">
-             <!-- Pie Chart -->
-             <div class="col p-0">
-               <div class="card shadow mb-4">
-                 <!-- Card Header - Dropdown -->
-                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                   <h6 class="m-0 font-weight-bold text-primary">Employees per Shift</h6>
-                 </div>
-                 <!-- Card Body -->
-                 <div class="card-body" style="max-height: 370px;">
-                   <table class="table">
-                     <thead class="bg-primary text-white">
-                       <tr>
-                         <th scope="col">#</th>
-                         <th scope="col">Shift Code</th>
-                         <th scope="col">Employees</th>
-                       </tr>
-                     </thead>
-                     <tbody>
-                       <?php $i = 1;
-foreach ($s_list as $s): ?>
-                         <?php if ($s['s_id'] == 0) {
-    continue;
-}?>
-                         <tr>
-                           <th scope="row"><?=$i++?></th>
-                           <td><?=$s['s_id']?></td>
-                           <td><?=$s['qty']?></td>
-                         </tr>
-                       <?php endforeach;?>
-                     </tbody>
-                   </table>
-                 </div>
-               </div>
-             </div>
-           </div>
+        <!-- Employees per Shift Table -->
+        <div class="col-lg-6">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">
+                        <i class="fas fa-clock"></i> Employees per Shift
+                    </h6>
+                </div>
+                <div class="card-body table-responsive" style="max-height: 400px;">
+                    <table class="table table-hover">
+                        <thead class="bg-primary text-white">
+                            <tr>
+                                <th>#</th>
+                                <th>Shift Code</th>
+                                <th>Employees</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php $i = 1; foreach ($s_list as $s): ?>
+                            <?php if ($s['s_id'] == 0) continue; ?>
+                            <tr>
+                                <td><?=$i++?></td>
+                                <td><?=$s['s_id']?></td>
+                                <td><?=$s['qty']?></td>
+                            </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 
-         </div>
-       </div>
-       <!-- /.container-fluid -->
-
-       </div>
-       <!-- End of Main Content -->
+</div>

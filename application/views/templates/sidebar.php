@@ -12,7 +12,7 @@
 
     <!-- Query Menu -->
     <?php
-    $role_id = $this->session->userdata('role_id');
+    $role_id =$this->session->userdata('role_id');
 
     $queryMenu = "SELECT `user_menu`.`id`, `menu`
                   FROM `user_menu` JOIN `user_access`
