@@ -36,6 +36,7 @@ class Attendance extends CI_Controller
                 $this->load->view('templates/sidebar');
                 $this->load->view('templates/topbar');
                 $this->load->view('attendance/index', $d);
+                $this->load->view('templates/footer', $d);
             } else {
                 // Xử lý chấm công (Check In)
                 $this->_handleCheckIn($d);
@@ -46,6 +47,7 @@ class Attendance extends CI_Controller
             $this->load->view('templates/sidebar');
             $this->load->view('templates/topbar');
             $this->load->view('attendance/index', $d);
+            $this->load->view('templates/footer', $d);
         }
     }
 
