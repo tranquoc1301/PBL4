@@ -443,7 +443,6 @@ class Master extends CI_Controller
         redirect('master/employee');
     }
 
-
     public function users()
     {
         $query = "SELECT employee_department.employee_id AS e_id,
@@ -560,4 +559,41 @@ class Master extends CI_Controller
         }
         redirect('master/users');
     }
+
+    public function attendance()
+    {
+        $query = "SELECT * from attendance";
+        $d['title'] = 'Attendance';
+        $d['attendance'] = $this->db->query($query)->result_array();
+        $d['account'] = $this->Admin_model->getAdmin($this->session->userdata['username']);
+
+        $this->load->view('templates/table_header', $d);
+        $this->load->view('templates/sidebar');
+        $this->load->view('templates/topbar');
+        $this->load->view('master/attendance/index', $d);
+        $this->load->view('templates/table_footer');
+    }
+
+    // public function users()
+    // {
+    //     $query = "SELECT employee_department.employee_id AS e_id,
+    //                  employee_department.department_id AS d_id,
+    //                  users.username AS u_username,
+    //                  employee.name AS e_name
+    //             FROM employee_department
+    //        LEFT JOIN users
+    //               ON employee_department.employee_id = users.employee_id
+    //       INNER JOIN employee
+    //               ON employee_department.employee_id = employee.id
+    //       ";
+    //     $d['title'] = 'Users';
+    //     $d['data'] = $this->db->query($query)->result_array();
+    //     $d['account'] = $this->Admin_model->getAdmin($this->session->userdata['username']);
+
+    //     $this->load->view('templates/table_header', $d);
+    //     $this->load->view('templates/sidebar');
+    //     $this->load->view('templates/topbar');
+    //     $this->load->view('master/users/index', $d);
+    //     $this->load->view('templates/table_footer');
+    // }
 }

@@ -79,7 +79,7 @@
                         <thead class="bg-primary text-white">
                             <tr>
                                 <th>#</th>
-                                <th>Dept Code</th>
+                                <th>Department ID</th>
                                 <th>Employees</th>
                             </tr>
                         </thead>
@@ -110,7 +110,7 @@
                         <thead class="bg-primary text-white">
                             <tr>
                                 <th>#</th>
-                                <th>Shift Code</th>
+                                <th>Shift ID</th>
                                 <th>Employees</th>
                             </tr>
                         </thead>

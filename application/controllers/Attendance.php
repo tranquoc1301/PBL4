@@ -51,21 +51,43 @@ class Attendance extends CI_Controller
         }
     }
 
+    // private function _handleCheckIn($d)
+    // {
+    //     date_default_timezone_set('Asia/Ho_Chi_Minh');
+    //     $username = $this->session->userdata('username');
+    //     $shift = $d['account']['shift'];
+    //     $notes = $this->input->post('notes');
+    //     $shift_id = $this->input->post('work_shift');
+    //     $iTime = time();
+
+    //     $value = [
+    //         'username' => $username,
+    //         'employee_id' => $d['account']['id'],
+    //         'department_id' => $d['account']['department_id'],
+    //         'shift_id' => $shift_id,
+    //         'in_time' => $iTime,
+    //         'notes' => $notes,
+    //     ];
+
+    //     $this->_checkIn($value);
+    // }
     private function _handleCheckIn($d)
     {
-        date_default_timezone_set('Asia/Jakarta');
+        date_default_timezone_set('Asia/Ho_Chi_Minh');
         $username = $this->session->userdata('username');
         $shift = $d['account']['shift'];
         $notes = $this->input->post('notes');
         $shift_id = $this->input->post('work_shift');
-        $iTime = time();
+
+        // Lấy thời gian hiện tại dưới dạng 'Y-m-d H:i:s'
+        $iTime = date('Y-m-d H:i:s');
 
         $value = [
             'username' => $username,
             'employee_id' => $d['account']['id'],
             'department_id' => $d['account']['department_id'],
             'shift_id' => $shift_id,
-            'in_time' => $iTime,
+            'in_time' => $iTime, // Đặt giá trị in_time theo định dạng 'Y-m-d H:i:s'
             'notes' => $notes,
         ];
 
@@ -85,32 +107,60 @@ class Attendance extends CI_Controller
         redirect('attendance');
     }
 
+    // public function checkOut()
+    // {
+    //     $username = $this->session->userdata('username');
+    //     $today = date('Y-m-d', time());
+
+    //     // Lấy bản ghi gần nhất của ngày hôm nay
+    //     $querySelect = "SELECT id FROM `attendance`
+    //                     WHERE `username` = '$username'
+    //                       AND FROM_UNIXTIME(`in_time`, '%Y-%m-%d') = '$today'
+    //                     ORDER BY `in_time` DESC LIMIT 1";
+    //     $record = $this->db->query($querySelect)->row_array();
+
+    //     if ($record) {
+    //         $id = $record['id'];
+    //         $queryUpdate = "UPDATE `attendance`
+    //                         SET `out_time` = '" . time() . "'
+    //                         WHERE `id` = $id";
+    //         $this->db->query($queryUpdate);
+
+    //         // Ghi trạng thái đã checkout
+    //         $this->session->set_userdata('checked_out', true);
+    //     }
+
+    //     redirect('attendance');
+    // }
     public function checkOut()
     {
         $username = $this->session->userdata('username');
         $today = date('Y-m-d', time());
-    
+
         // Lấy bản ghi gần nhất của ngày hôm nay
         $querySelect = "SELECT id FROM `attendance`
-                        WHERE `username` = '$username' 
-                          AND FROM_UNIXTIME(`in_time`, '%Y-%m-%d') = '$today'
-                        ORDER BY `in_time` DESC LIMIT 1";
+                    WHERE `username` = '$username'
+                      AND DATE(`in_time`) = '$today'
+                    ORDER BY `in_time` DESC LIMIT 1";
         $record = $this->db->query($querySelect)->row_array();
-    
+
         if ($record) {
             $id = $record['id'];
+
+            // Lấy thời gian hiện tại dưới dạng 'Y-m-d H:i:s' khi checkout
+            $outTime = date('Y-m-d H:i:s');
+
             $queryUpdate = "UPDATE `attendance`
-                            SET `out_time` = '" . time() . "'
-                            WHERE `id` = $id";
+                        SET `out_time` = '$outTime'
+                        WHERE `id` = $id";
             $this->db->query($queryUpdate);
-    
+
             // Ghi trạng thái đã checkout
             $this->session->set_userdata('checked_out', true);
         }
-    
+
         redirect('attendance');
     }
-    
 
     public function new_form()
     {
